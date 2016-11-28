@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>example-5-1-2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+  $("li").hover(
+    function(){      var def = $(this).data("definition");
+      var clr = $(this).data("color");
+      var txt = $(this).text();      $("p").text(txt + ' (' + def + ') - ' + clr);
+    },
+    function(){ $("p").empty(); }
+  );
+});
+</script>
+</head>
+<body>
+<ul>
+  <li data-definition="животное" data-color="рыжая">Лиса</li>
+  <li data-definition="птица" data-color="черный">Ворон</li>
+  <li data-definition="дерево" data-color="белая">Береза</li>
+</ul>
+<p></p>
+</body>
+</html>

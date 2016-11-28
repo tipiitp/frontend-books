@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-6-2-4</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+div {
+  margin:5px;
+  padding:5px;
+  border:1px dotted #369;
+}
+span {
+  color:#fff;
+  font-weight:bold;
+  background-color:#e4ae00;
+  margin:0 5px;
+  padding:0 5px;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+  $("button").click(function() {
+    $("span").prependTo("div.test");
+  });
+});
+</script>
+</head>
+<body>
+<span>Первый элемент span</span>
+<span>Второй элемент span</span>
+<div class="test"><-- Сюда будут вставлены элементы span</div>
+<div class="test"><-- Сюда будут вставлены элементы span</div>
+<button>Вставить</button>
+</body>
+</html>

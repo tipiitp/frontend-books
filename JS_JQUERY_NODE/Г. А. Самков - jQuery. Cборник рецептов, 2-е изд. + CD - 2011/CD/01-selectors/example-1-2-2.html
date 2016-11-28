@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-1-2-2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+form {
+  border:2px green solid;
+  padding:2px;
+  margin:0;
+  background:#efe;
+}
+div {
+  color:red;
+}
+fieldset {
+  margin:1px;
+  padding:3px;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+  $("form > input").css("border", "2px dotted brown");
+});
+</script>
+</head>
+<body>
+<form>
+  <div>Форма заключена в зеленую рамку</div>
+  <label>Ребенок:</label>
+  <input type="text" name="name" />
+  <fieldset>
+    <label>Внук:</label>
+    <input type="text" name="newsletter" />
+  </fieldset>
+</form>
+Сестринский элемент по отношению к форме: <input type="text" name="none" />
+</body>
+</html>

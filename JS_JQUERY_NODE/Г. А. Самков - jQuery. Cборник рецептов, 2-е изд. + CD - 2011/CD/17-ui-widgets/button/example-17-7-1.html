@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-17-7-1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="css/sunny/jquery-ui-1.8.9.custom.css" rel="stylesheet" />
+<script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui-1.8.9.custom.min.js" type="text/javascript"></script>
+<style type="text/css">
+div, button, input, a { margin:10px; }
+</style>
+<script type="text/javascript">
+$(function(){
+  $("button, input:submit, a").button().click(function(e){
+    alert(e.type);
+    return false;
+  });
+  $("div.set").buttonset();
+});
+</script>
+</head>
+<body>
+<div>
+  <button>Элемент button</button>
+  <input value="input типа submit" type="submit" />
+  <a href="#">Элемент А</a>
+</div>
+<div class="set">
+  <input type="radio" id="radio1" name="radio" /><label for="radio1">Выбор 1</label>
+  <input type="radio" id="radio2" name="radio" checked="checked" /><label for="radio2">Выбор 2</label>
+  <input type="radio" id="radio3" name="radio" /><label for="radio3">Выбор 3</label>
+</div>
+<div class="set">
+  <input type="checkbox" id="check1" /><label for="check1">Ж</label>
+  <input type="checkbox" id="check2" /><label for="check2">К</label>
+  <input type="checkbox" id="check3" /><label for="check3">Ч</label>
+</div>
+</body>
+</html>

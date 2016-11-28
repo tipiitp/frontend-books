@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-14-1-1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="css/form.css" rel="stylesheet" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<script src="js/jquery.form.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+  var options = {
+  	target: "#output",
+    beforeSubmit: showRequest,
+    success: showResponse,
+    timeout: 3000
+  };
+
+  $("#myForm").submit(function() {
+    $(this).ajaxSubmit(options);
+    return false;
+  });
+
+  // вызов перед передачей данных
+  function showRequest(formData, jqForm, options) {
+    var queryString = $.param(formData);
+    alert('Вот что мы передаем: \n\n' + queryString);
+    return true;
+  }
+
+  // вызов после получения ответа
+  function showResponse(responseText, statusText)  {
+    alert('Статус ответа сервера: ' + statusText +
+          '\n\nТекст ответа сервера: \n' + responseText +
+          '\n\nбудет помещен в элемент #output.');
+  }
+});
+</script>
+</head>
+<body>
+<div id="output">&nbsp;</div>
+
+<form id="myForm" action="form.php" method="post">
+<div>
+<input type="hidden" name="Hidden" value="hidden Value" /><br />
+<label>Имя:</label>
+<input name="Name" type="text" value="Моё имя" /><br />
+<label>Пароль:</label>
+<input name="Password" type="password" /><br />
+<label>Мультиселект:</label>
+<select class="ms" name="Multiple[]" multiple="multiple">
+  <optgroup label="Группа 1">
+    <option value="one" selected="selected">Первый элемент</option>
+    <option value="two">Второй элемент</option>
+    <option value="three">Третий элемент</option>
+  </optgroup>
+  <optgroup label="Группа 2">
+    <option value="four">Четвертый элемент</option>
+    <option value="five">Пятый элемент</option>
+    <option value="six">Шестой элемент</option>
+    <option value="seven">Седьмой элемент</option>
+  </optgroup>
+</select><br />
+<label>Элемент select:</label>
+<select name="Single">
+  <option value="one" selected="selected">Первый элемент</option>
+  <option value="two">Второй элемент</option>
+  <option value="three">Третий элемент</option>
+</select><br />
+<label>Элемент select 2:</label>
+<select name="Single2">
+  <optgroup label="Группа 1">
+    <option value="A" selected="selected">Буква A</option>
+    <option value="B">Буква B</option>
+    <option value="C">Буква C</option>
+  </optgroup>
+  <optgroup label="Группа 2">
+    <option value="D">Буква D</option>
+    <option value="E">Буква E</option>
+    <option value="F">Буква F</option>
+    <option value="G">Буква G</option>
+  </optgroup>
+</select><br />
+<label>Загрузка файла:</label>
+<input name="File" type="file" /><br />
+<label>Чекбоксы:</label>
+<input class="cb" type="checkbox" name="Check" value="1" />
+<input class="cb" type="checkbox" name="Check" value="2" />
+<input class="cb" type="checkbox" name="Check" value="3" /><br />
+<label>Радиобаттоны:</label>
+<input class="rb" type="radio" name="Radio" value="1" />
+<input class="rb" type="radio" name="Radio" value="2" />
+<input class="rb" type="radio" name="Radio" value="3" /><br />
+<label>Просто текст:</label>
+<textarea class="ta" name="Text" rows="2" cols="20">Это элемент textarea</textarea><br />
+<input id="reset" type="reset" name="resetButton" value="Reset" />
+<input id="submit2" type="image" name="submitButton" value="Submit2" src="img/form.gif" />
+<input id="submit1" type="submit" name="submitButton" value="Submit1" />
+</div>
+</form>
+</body>
+</html>

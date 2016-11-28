@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-4-2-1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+div {
+  width:120px; height:110px;
+  margin:15px; padding:10px;
+  border:1px dotted #f00;
+  overflow:hidden;
+}
+button { width:170px; }
+</style>
+<script type="text/javascript">
+$(function(){
+  $("button:eq(0)").click(function(){
+    $("input").val($("div").width());
+  });
+  $("button:eq(1)").click(function(){
+    $("input").val($("div").height());
+  });
+  $("button:eq(2)").click(function(){
+    $("input").val($("div").innerWidth());
+  });
+  $("button:eq(3)").click(function(){
+    $("input").val($("div").innerHeight());
+  });
+  $("button:eq(4)").click(function(){
+    $("input").val($("div").outerWidth(true));
+  });
+  $("button:eq(5)").click(function(){
+    $("input").val($("div").outerHeight());
+  });
+  $("button:eq(6)").click(function(){
+    $("div").width($("input").val()*1);
+  });
+  $("button:eq(7)").click(function(){
+    $("div").height($("input").val()*1);
+  });
+});
+</script>
+</head>
+<body>
+<button>Получить width</button>
+<button>Получить height</button>
+<button>Получить innerWidth</button>
+<button>Получить innerHeight</button>
+<button>Получить outerWidth</button>
+<button>Получить outerHeight</button>
+<br /><br />
+<input type="text" />
+<button>Установить width</button>
+<button>Установить height</button>
+<div>Элемент div</div>
+</body>
+</html>

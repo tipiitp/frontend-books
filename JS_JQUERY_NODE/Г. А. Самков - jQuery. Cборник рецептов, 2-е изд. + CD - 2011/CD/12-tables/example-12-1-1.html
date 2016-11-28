@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-12-1-1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/redmond/jquery-ui-1.8.11.custom.css" />
+<link rel="stylesheet" type="text/css" href="css/ui.jqgrid.css" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<script src="js/i18n/grid.locale-ru.js" type="text/javascript"></script>
+<script src="js/jquery.jqGrid.min.js" type="text/javascript"></script>
+<style type="text/css">
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+  $("#example").jqGrid({
+    datatype: "local",
+    height: 150,
+    colNames:['Id','Код страны','Код региона','Город','Широта','Долгота'],
+    colModel:[
+      {name:'id', width:50, sorttype:"int",resizable:false},
+      {name:'country_code', width:75, sorttype:"text"},
+      {name:'region_code', width:75, sortable:false},
+      {name:'city', width:300, align:"left", sorttype:"text"},
+      {name:'latitude', width:100, align:"center", sorttype:"float"},
+      {name:'longitude', width:100, align:"right", sorttype:"float"}
+    ],
+    multiselect: true,
+    caption: "Наполнение таблицы локальными данными"
+  });
+  var mydata = [
+    {id:"8039", country_code:"CH", region_code:"19", city:"Aadorf", latitude:"47.4833", longitude:"8.9"},
+    {id:"4286", country_code:"BE", region_code:"08", city:"Aalst", latitude:"50.9333", longitude:"4.0333"},
+    {id:"4287", country_code:"BE", region_code:"08", city:"Aalter", latitude:"51.0833", longitude:"3.45"},
+    {id:"7405", country_code:"CH", region_code:"01", city:"Aarau", latitude:"47.3833", longitude:"8.05"},
+    {id:"7936", country_code:"CH", region_code:"14", city:"Aarberg", latitude:"47.05", longitude:"7.2833"},
+    {id:"7406", country_code:"CH", region_code:"01", city:"Aarburg", latitude:"47.3167", longitude:"7.9"},
+    {id:"3564", country_code:"BE", region_code:"02", city:"Aarschot", latitude:"50.9833", longitude:"4.8333"},
+    {id:"4437", country_code:"BE", region_code:"09", city:"Aartrijke", latitude:"51.1167", longitude:"3.0833"},
+    {id:"3443", country_code:"BE", region_code:"01", city:"Aartselaar", latitude:"51.1333", longitude:"4.3833"},
+    {id:"7407", country_code:"CH", region_code:"01", city:"Aarwangen", latitude:"47.2333", longitude:"7.75"}
+  ];
+  $.each(mydata, function(i,val){
+  	$("#example").addRowData(i+1,val);
+  });
+});
+</script>
+</head>
+<body>
+<table id="example"></table>
+</body>
+</html>

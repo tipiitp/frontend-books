@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-9-1-5</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+div {
+  width:400px; height:200px;
+  padding:10px; margin:10px;
+  border:3px double #369;
+  overflow:auto;
+  background-color: #fff;
+}
+</style>
+<script type="text/javascript">
+$(function () {
+  $("button:eq(0)").click(function(){
+    $.getScript("testGetScript.js");
+  });
+  $("button:eq(1)").click(function(){
+    $.getScript("http://dev.jquery.com/view/trunk/plugins/color/jquery.color.js",
+    function(){
+      $("div").animate({ backgroundColor: "#f00" }, 1500)
+              .animate({ backgroundColor: "#00f" }, 1500)
+              .animate({ backgroundColor: "#fff" }, 1500);
+    });
+  });
+});
+</script>
+</head>
+<body>
+<div></div>
+<button>Загрузить и выполнить локальный скрипт</button>
+<button>Загрузить и выполнить скрипт с другого домена</button>
+</body>
+</html>

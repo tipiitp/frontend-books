@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-10-1-10</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function () {  function stub() {  }  var objs = [ null,
+               function () {},
+               { x:15, y:20 },
+               stub,
+               "function"
+             ];
+  $.each(objs, function (i) {
+    var isFunc = $.isFunction(objs[i]);
+    $("span").eq(i).text(isFunc);
+  });
+});
+</script>
+</head>
+<body>
+<div>$.isFunction(objs[0]): <span></span></div>
+<div>$.isFunction(objs[1]): <span></span></div>
+<div>$.isFunction(objs[2]): <span></span></div>
+<div>$.isFunction(objs[3]): <span></span></div>
+<div>$.isFunction(objs[4]): <span></span></div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-3-3-1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+div {
+  position:absolute;
+  background-color:#369;
+  left:100px;
+  width:90px;
+  height:90px;
+  margin:5px;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+  $("#right").click(function(){
+    $(".block").animate({"left": "+=50px"}, "slow");
+  });
+  $("#left").click(function(){
+    $(".block").animate({"left": "-=50px"}, "slow");
+  });
+});
+</script>
+</head>
+<body>
+<button id="left">« влево</button><button id="right">вправо »</button>
+<div class="block"></div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-17-8-3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.9.custom.css" rel="stylesheet" />
+<script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui-1.8.9.custom.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+  var availableTags = ["ActionScript","AppleScript","Asp","BASIC",
+  "C","C++","Clojure","COBOL","ColdFusion","Erlang","Fortran",
+  "Groovy","Haskell","Java","JavaScript","Lisp","Perl","PHP",
+  "Python","Ruby","Scala","Scheme"];
+  $("#tags").autocomplete({
+    source: availableTags,
+    minLength: 0
+  });
+  $("#search").click(function(){ $("#tags").autocomplete("search", "as") });
+  $("#close").click(function(){ $("#tags").autocomplete("close") });
+});
+</script>
+</head>
+<body>
+<button id="search">Искать "as"</button>
+<button id="close">Закрыть</button>
+<div class="ui-widget">
+	<label for="tags">Tags: </label>
+	<input id="tags" type="text" />
+</div>
+</body>
+</html>

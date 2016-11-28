@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-13-1-4</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--[if IE]><script type="text/javascript" src="js/excanvas.min.js"></script><![endif]-->
+<script type="text/javascript" src="js/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.jqplot.min.js"></script>
+<link rel="stylesheet" type="text/css" href="js/jquery.jqplot.min.css" />
+<script type="text/javascript" src="js/plugins/jqplot.barRenderer.min.js" /></script>
+<script type="text/javascript" src="js/plugins/jqplot.categoryAxisRenderer.min.js" /></script>
+<script type="text/javascript" src="js/plugins/jqplot.pointLabels.min.js" /></script>
+<script type="text/javascript">
+$(function(){
+  line1 = [14, 32, 41, 44, 40, 37, 29];
+  line2 = [7, 12, 15, 17, 20, 27, 39];
+  $.jqplot("example", [line1, line2], {
+    title: "Пример диаграммы с метками значений",
+    stackSeries: true,
+    seriesDefaults: {
+      renderer: $.jqplot.BarRenderer,
+      rendererOptions: { barMargin: 25 },
+      pointLabels: { show: true, stackedValue: true }
+    },
+    axes: {
+      xaxis:{ renderer:$.jqplot.CategoryAxisRenderer },
+      yaxis:{ ticks:[0, 20, 40, 60, 80] }
+    }
+  });
+});
+</script>
+</head>
+<body>
+<div id="example" style="height:320px; width:480px;"></div>
+</body>
+</html>

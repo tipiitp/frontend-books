@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-7-1-4</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+body { width:400px; }
+body, h1, div, p, ul, li, a {
+  padding:10px; margin:10px;
+  border:2px solid #ccc;
+}
+a { display:block; }
+</style>
+<script type="text/javascript">
+$(function(){
+  $("a:first").click(function(){  	$("*").css("border-color","#ccc");
+    $(this).parents("ul").css("border-color","#f0f");
+  });
+  $("a:last").click(function(){  	$("*").css("border-color","#ccc");
+    $(this).closest("ul").css("border-color","#ff0");
+  });
+});
+</script>
+</head>
+<body>
+<h1>Заголовок</h1>
+<p>Параграф вне элемента div</p>
+<div>
+  <p>Параграф внутри элемента div</p>
+  <ul>
+    <li><a href="#">Метод parents()</a></li>
+    <li><a href="#">Метод closest()</a></li>
+  </ul>
+  <p>Параграф внутри элемента div</p>
+</div>
+<p>Параграф вне элемента div</p>
+</body>
+</html>

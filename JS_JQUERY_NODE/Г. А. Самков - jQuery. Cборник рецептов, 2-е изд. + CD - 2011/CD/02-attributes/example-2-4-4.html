@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-2-4-4</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+  $("#single").val("Single3");
+  $("#multiple").val(["Multiple2", "Multiple4", "Multiple5"]);
+  $("input").val(["check", "radio3"]);
+});
+</script>
+</head>
+<body>
+<select id="single">
+  <option>Single1</option>
+  <option>Single2</option>
+  <option>Single3</option>
+  <option>Single4</option>
+  <option>Single5</option>
+</select>
+<select id="multiple" multiple="multiple">
+  <option selected="selected">Multiple1</option>
+  <option>Multiple2</option>
+  <option selected="selected">Multiple3</option>
+  <option>Multiple4</option>
+  <option>Multiple5</option>
+</select><br />
+<input type="checkbox" name="c" value="check" /><label>check</label><br />
+<input type="radio" name="r" value="radio1" /><label>radio1</label>
+<input type="radio" name="r" value="radio2" /><label>radio2</label>
+<input type="radio" name="r" value="radio3" /><label>radio3</label>
+</body>
+</html>

@@ -1,0 +1,58 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+html, body {
+    background-color:#FFF;
+    font-family: "Trebuchet MS", Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+}
+form {
+  margin-left:25px;
+}
+input, textarea, select {
+  display:block;
+  width:250px;
+  float:left;
+  margin-left:10px;
+  margin-bottom:10px;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 10pt;
+}
+optgroup, option {
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 10pt;
+}
+label {
+  display:block;
+  text-align:right;
+  float:left;
+  width:105px;
+  padding-right:5px;
+}
+br {
+  clear:left;
+}
+.cb, .rb {
+  width:1em;
+}
+.ms, .ta {
+  height:100px;
+}
+#reset, #submit1 {
+  width:87px;
+  margin-left:20px;
+  margin-top:10px;
+}
+#submit2 {
+  width:87px;
+  height:40px;
+  margin-left:20px;
+}
+#output {
+  background-color:#F0B80D;
+  height:75px;
+  overflow:auto;
+  padding:5px;
+}

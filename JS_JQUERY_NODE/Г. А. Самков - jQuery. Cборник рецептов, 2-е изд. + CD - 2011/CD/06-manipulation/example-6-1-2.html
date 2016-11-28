@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-6-1-2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+  $("ul li").text(function(index,text) {
+    return text + ' - ' + (index + 1);
+  });
+});
+</script>
+</head>
+<body>
+<ul>
+  <li>Первый пункт списка</li>
+  <li>Второй пункт списка</li>
+  <li>Третий пункт списка</li>
+</ul>
+</body>
+</html>

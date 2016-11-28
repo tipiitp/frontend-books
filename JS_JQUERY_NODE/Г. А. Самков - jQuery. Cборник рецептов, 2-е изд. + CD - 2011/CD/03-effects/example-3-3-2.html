@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-3-3-2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+div {
+  width:100px;
+  border:1px solid #369;
+  padding:5px;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+  $("#go").click(function(){
+    $("#block").animate({
+      "width": "70%",
+      "opacity": 0.3,
+      "marginLeft": "5em",
+      "fontSize": "3em",
+      "borderWidth": "10px"
+    }, 2500, function(){ alert("Сделано!"); } );
+  });
+  $("#stop").click(function(){
+    $("#block").stop();
+  });
+});
+</script>
+</head>
+<body>
+<button id="go">Выполнить</button>
+<button id="stop">Остановить</button>
+<div id="block">Hello!</div>
+</body>
+</html>

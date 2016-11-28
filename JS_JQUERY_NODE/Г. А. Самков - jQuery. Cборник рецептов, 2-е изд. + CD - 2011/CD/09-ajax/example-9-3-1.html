@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-9-3-1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+#result {
+  width:410px; height:180px;
+  margin:5px; padding:3px;
+  border:1px solid #369;
+}
+button {
+  width:200px;
+  margin:5px;
+}
+</style>
+<script type="text/javascript">
+$(function () {
+  var start = new Date().getTime();  // глобальные настройки
+  $.ajaxSetup({
+    url: "testEvents.php",
+    type: "POST",
+    timeout: 4000,
+    beforeSend: function() {
+      $("#result").append(new Date().getTime() - start + ' мс ==> beforeSend<br />');
+    },
+    success: function() {
+      $("#result").append(new Date().getTime() - start + ' мс ==> success<br />');
+    },
+    error: function() {
+      $("#result").append(new Date().getTime() - start + ' мс ==> error<br />');
+    },
+    complete: function() {
+      $("#result").append(new Date().getTime() - start + ' мс ==> complete<br />');
+    }
+  });
+  // успешный запрос
+  $("#well").click(function() {
+    $("#result").empty();
+    start = new Date().getTime();
+    $.ajax({
+      data: "er=none"
+    });
+  });
+  // ошибочный запрос
+  $("#bad").click(function() {
+    $("#result").empty();
+    start = new Date().getTime();
+    $.ajax({
+      data: "er=yes"
+    });
+  });
+  // обработка глобальных событий
+  $("#result").ajaxStart(function() {
+    $(this).append(new Date().getTime() - start + ' мс ==> ajaxStart<br />');
+  }).ajaxSend(function() {
+    $(this).append(new Date().getTime() - start + ' мс ==> ajaxSend<br />');
+  }).ajaxSuccess(function() {
+    $(this).append(new Date().getTime() - start + ' мс ==> ajaxSuccess<br />');
+  }).ajaxError(function() {
+    $(this).append(new Date().getTime() - start + ' мс ==> ajaxError<br />');
+  }).ajaxComplete(function() {
+    $(this).append(new Date().getTime() - start + ' мс ==> ajaxComplete<br />');
+  }).ajaxStop(function() {
+    $(this).append(new Date().getTime() - start + ' мс ==> ajaxStop<br />');
+  });
+});
+</script>
+</head>
+<body>
+<div id="result"></div>
+<button id="well">Успешный ajax-запрос</button>
+<button id="bad">Ошибочный ajax-запрос</button>
+</body>
+</html>

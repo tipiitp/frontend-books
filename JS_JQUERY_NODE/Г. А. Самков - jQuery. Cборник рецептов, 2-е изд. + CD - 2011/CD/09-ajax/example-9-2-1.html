@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-9-2-1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+div {
+  width:400px; height:200px;
+  padding:10px; margin:10px;
+  border:3px double #369;
+  overflow:auto;
+}
+span { color:#f00; }
+</style>
+<script type="text/javascript">
+$(function () {
+  $("button:first").click(function(){
+    $.ajax("testAjax.php", {
+      type: "POST",
+      data: "name=Jonh&age=35",
+      timeout: 5000,
+      beforeSend: function(){
+        $("div").text("Загрузка...");
+      },
+      success: function(data, textStatus, jqXHR){
+        $("div").html(data + '<br />Статус ответа: ' + textStatus +
+                     '<br />Код ответа сервера: ' + jqXHR.status);
+      },
+      error: function(jqXHR, textStatus){
+        $("div").html('<span>' + textStatus +
+                '</span><br />Код ответа сервера: ' + jqXHR.status);
+      }
+    });
+  });
+  $("button:last").click(function(){
+    $("div").empty();
+  });
+});
+</script>
+</head>
+<body>
+<div></div>
+<button>Загрузить</button>
+<button>Очистить</button>
+</body>
+</html>

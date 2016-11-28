@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-10-1-1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+div {
+  float:left;
+  width:100px; height:100px;
+  padding:10px; margin:10px;
+  border:1px solid #369;
+}
+p { color:#f00; }
+</style>
+<script type="text/javascript">
+$(function () {
+  var arr = [ "one", "two", "three", "four", "five" ];
+  var obj = { one:1, two:2, three:3, four:4, five:5 };
+  $.each(arr, function() {
+    $("#" + this).text("id='" + this + "'");
+    return (this != "four");
+  });
+  $.each(obj, function(n, val) {
+    $("#" + n).append("<p>" + val + "</p>");
+  });
+});
+</script>
+</head>
+<body>
+<div id="one"></div>
+<div id="two"></div>
+<div id="three"></div>
+<div id="four"></div>
+<div id="five"></div>
+</body>
+</html>

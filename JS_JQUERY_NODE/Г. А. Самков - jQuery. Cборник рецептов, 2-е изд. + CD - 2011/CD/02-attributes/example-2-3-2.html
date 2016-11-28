@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-2-3-2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+#test { border:1px dotted #369; padding:5px; }
+</style>
+<script type="text/javascript">
+$(function(){
+  $("button:first").click(function(){
+    var txt = $("div:first").text();
+    $("#test").text(txt);
+  });
+  $("button:last").click(function(){
+    var code = $("div:first").html();
+    $("#test").html(code);
+  });
+});
+</script>
+</head>
+<body>
+<div>
+<p>Я шел, спускаясь в темные коридоры, и потом опять поднимаясь наверх. Я был один. Я кричал, мне не отвечали - я был один в этом обширном, запутанном, как лабиринт, доме.</p><p><em>Ги де Мопассан</em></p>
+</div>
+<button>Получить и вставить как текст</button>
+<button>Получить и вставить как HTML</button>
+<div id="test">В этот div будет вставлен текст или html</div>
+</body>
+</html>

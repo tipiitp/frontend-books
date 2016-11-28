@@ -1,0 +1,63 @@
+* {
+  margin:0;
+  padding:0;
+}
+html, body {
+  background-color:#FFF;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+}
+form {
+  margin-left:25px;
+}
+input, textarea, select {
+  display:block;
+  width:250px;
+  float:left;
+  margin-left:10px;
+  margin-bottom:15px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+}
+textarea {
+  height:50px;
+}
+label {
+  position:relative;
+  display:block;
+  text-align:right;
+  float:left;
+  width:180px;
+  padding-right:5px;
+}
+label em {
+  position:absolute;
+  right:-260px;
+  top:-15px;
+  font-size:.8em;
+  color: #f00;
+  padding: 1px;
+}
+br {
+  clear:left;
+}
+.cb, .rb {
+  width:1em;
+}
+#reset {
+  width:87px;
+  margin-left:135px;
+  margin-top:10px;
+}
+input.img {
+  width:87px;
+  height:40px;
+  margin-left:135px;
+}
+#output {
+  background-color:#F0B80D;
+  overflow:auto;
+  height:75px;
+  padding:5px;
+  margin-bottom:15px;
+}

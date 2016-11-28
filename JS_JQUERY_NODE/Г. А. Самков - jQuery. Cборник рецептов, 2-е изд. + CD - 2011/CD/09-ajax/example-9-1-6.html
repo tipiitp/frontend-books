@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-9-1-6</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+div {
+  width:400px; height:200px;
+  padding:10px; margin:10px;
+  border:3px double #369;
+  overflow:auto;
+}
+</style>
+<script type="text/javascript">
+$(function () {
+  $("button:eq(0)").click(function(){
+    $.getJSON("testGetJSON.php", function(data, textStatus, jqXHR){
+      var items = [];
+      $.each(data, function(i,item){      	items.push(item.name + ': ' + item.phone);      });
+      $("div").html(items.join('<br />'));
+    });
+  });
+  $("button:eq(1)").click(function(){
+  	$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags=nature&tagmode=any&format=json&jsoncallback=?",
+    function(data){
+      $.each(data.items, function(i,item){
+        $("<img/>").attr("src", item.media.m)
+                   .attr("title",item.title)
+                   .appendTo("div");
+        if (i == 2) return false;
+      });
+    });
+  });
+  $("button:last").click(function(){
+    $("div").empty();
+  });
+});
+</script>
+</head>
+<body>
+<div></div>
+<button>getJSON</button>
+<button>getJSONP</button>
+<button>Очистить</button>
+</body>
+</html>

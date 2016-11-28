@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-1-6-6</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+div { width:100px; height:100px; margin:5px; padding:5px; border:1px solid #00f; float:left; }
+</style>
+<script type="text/javascript">
+$(function(){
+  $("div[id*='test']").css({ "border-color": "#f00", "color": "#f00" });
+});
+</script>
+</head>
+<body>
+<div>Элемент div без атрибута id, но с class="example"</div>
+<div id="test">Элемент div с атрибутом id="test"</div>
+<div id="pretest" class="example">Элемент div с атрибутами id="pretest" и class="example"</div>
+<div>Элемент div без атрибута id</div>
+<div id="testend">Элемент div с атрибутом id="testend"</div>
+<div id="sometestvalue">Элемент div с атрибутом id="sometestvalue"</div>
+<div>Элемент div без атрибута id</div>
+<div id="somevalue">Элемент div с атрибутом id="somevalue"</div>
+</body>
+</html>

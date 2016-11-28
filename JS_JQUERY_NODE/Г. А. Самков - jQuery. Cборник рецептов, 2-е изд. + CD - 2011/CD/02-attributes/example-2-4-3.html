@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-2-4-3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+p { border:1px dotted #369; padding:5px; color:#00f; }
+</style>
+<script type="text/javascript">
+$(function(){
+  $("#getSingle").click(function(){
+    var single = $("#single option:selected").val();
+    $("p").empty().text(single);
+  });
+  $("#getMultiple").click(function(){
+    var multiple = $("#multiple").val();
+    $("p").empty().text(multiple.join(", "));
+  });
+  $("#getCheckbox").click(function(){
+    var checkbox = $("input:checkbox:checked").val();
+    $("p").empty().text(checkbox);
+  });
+  $("#getRadio").click(function(){
+    var radio = $("input:radio[name=r]:checked").val();
+    $("p").empty().text(radio);
+  });
+});
+</script>
+</head>
+<body>
+<p></p>
+<select id="single">
+  <option value="s1">Single1</option>
+  <option value="s2">Single2</option>
+  <option value="s3">Single3</option>
+  <option value="s4">Single4</option>
+  <option value="s5">Single5</option>
+</select>
+<select id="multiple" multiple="multiple">
+  <option value="m1" selected="selected">Multiple1</option>
+  <option value="m2">Multiple2</option>
+  <option value="m3" selected="selected">Multiple3</option>
+  <option value="m4">Multiple4</option>
+  <option value="m5">Multiple5</option>
+</select><br />
+<input type="checkbox" name="c" value="check" checked="checked" /><label>check</label><br />
+<input type="radio" name="r" value="radio1" /><label>radio1</label>
+<input type="radio" name="r" value="radio2" /><label>radio2</label>
+<input type="radio" name="r" value="radio3" checked="checked" /><label>radio3</label><hr />
+<button id="getSingle">select #single</button>
+<button id="getMultiple">select #multiple</button>
+<button id="getCheckbox">checkbox</button>
+<button id="getRadio">radio</button>
+</body>
+</html>

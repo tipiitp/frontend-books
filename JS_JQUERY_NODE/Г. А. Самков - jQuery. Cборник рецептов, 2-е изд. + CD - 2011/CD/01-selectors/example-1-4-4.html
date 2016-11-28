@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-1-4-4</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+  td { background-color:#393; }
+</style>
+<script type="text/javascript">
+$(function(){
+  $("td:parent").fadeTo(3000, 0.3);
+});
+</script>
+</head>
+<body>
+<table style="width:200px;border:1px solid #000;">
+  <tr><td>1-1</td><td><span></span></td></tr>
+  <tr><td>2-1</td><td></td></tr>
+  <tr><td></td><td>3-2</td></tr>
+  <tr><td></td><td>4-2</td></tr>
+</table>
+</body>
+</html>

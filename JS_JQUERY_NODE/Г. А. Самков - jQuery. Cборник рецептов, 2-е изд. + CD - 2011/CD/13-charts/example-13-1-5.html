@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-13-1-5</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--[if IE]><script type="text/javascript" src="js/excanvas.min.js"></script><![endif]-->
+<script type="text/javascript" src="js/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.jqplot.min.js"></script>
+<link rel="stylesheet" type="text/css" href="js/jquery.jqplot.min.css" />
+<script type="text/javascript" src="js/plugins/jqplot.dragable.min.js" /></script>
+<script type="text/javascript" src="js/plugins/jqplot.trendline.min.js" /></script>
+<script type="text/javascript">
+$(function(){
+  $.jqplot.config.enablePlugins = true;
+  line1=[4, 25, 13, 22, 14, 17, 15];
+  $.jqplot("example", [line1],
+    { title: "Изменяемые значения и линия тренда" }
+  );
+});
+</script>
+</head>
+<body>
+<div id="example" style="height:320px; width:480px;"></div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-16-3-3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<script src="js/jquery.cluetip.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.cluetip.css" />
+<style type="text/css">
+body { position:relative; }
+</style>
+<script type="text/javascript">
+$(function(){
+  $("a.local").cluetip({
+    local: true,
+    arrows: true,
+    sticky: true,
+    closePosition: "bottom",
+    closeText: "Закрыть",
+    cluetipClass: "jtip"
+  });
+});
+</script>
+</head>
+<body>
+<p>Плагин jQuery Cluetip умеет <a class="local" href="#" rel="p.loadme" title="Локальный контент">загружать</a> локальный контент.</p>
+<p class="loadme">В данном случае в подсказку загружено содержимое первого элемента p, у которого имеется класс <strong>loadme</strong>, и который находится на этой же странице.</p>
+</body>
+</html>

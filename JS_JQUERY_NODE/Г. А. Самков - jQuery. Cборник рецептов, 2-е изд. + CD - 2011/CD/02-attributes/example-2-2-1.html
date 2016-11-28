@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-2-2-1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+p { border:1px dotted #ccc; }
+.test { background-color:#369; color:#fff; }
+</style>
+<script type="text/javascript">
+$(function(){
+  $("#add").click(function(){
+    $("p").addClass("test");
+  });
+  $("#remove").click(function(){
+    $("p").removeClass("test");
+  });
+  $("#toggle").click(function(){
+    $("p").toggleClass("test");
+  });
+  $("#has").click(function(){
+    alert($("p:first").hasClass("test"));
+  });
+});
+</script>
+</head>
+<body>
+<p>Параграф №1</p>
+<p>Параграф №2</p>
+<p>Параграф №3</p>
+<button id="add">Добавить класс</button>
+<button id="remove">Удалить класс</button>
+<button id="toggle">Переключить класс</button>
+<button id="has">Проверить класс</button>
+</body>
+</html>

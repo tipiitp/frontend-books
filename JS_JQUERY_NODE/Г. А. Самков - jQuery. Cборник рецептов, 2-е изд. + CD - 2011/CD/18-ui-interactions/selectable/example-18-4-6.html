@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-18-4-6</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="css/le-frog/jquery-ui-1.8.9.custom.css" rel="stylesheet" />
+<script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui-1.8.9.custom.min.js" type="text/javascript"></script>
+<style type="text/css">
+  #selectable .ui-selecting { background: #FECA40; }
+  #selectable .ui-selected { background: #F39814; color: white; }
+  #selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+</style>
+<script type="text/javascript">
+$(function(){
+  $("#selectable").selectable();
+  $("#disable").click(function(){
+  	$("#selectable").selectable("disable");
+  });
+  $("#enable").click(function(){
+  	$("#selectable").selectable("enable");
+  });
+  $("#destroy").click(function(){
+  	$("#selectable").selectable("destroy");
+  });
+});
+</script>
+</head>
+<body>
+<ol id="selectable">
+  <li class="ui-widget-content">Item 1</li>
+  <li class="ui-widget-content">Item 2</li>
+  <li class="ui-widget-content">Item 3</li>
+  <li class="ui-widget-content">Item 4</li>
+  <li class="ui-widget-content">Item 5</li>
+  <li class="ui-widget-content">Item 6</li>
+  <li class="ui-widget-content">Item 7</li>
+</ol>
+<button id="disable">Disable</button>
+<button id="enable">Enable</button>
+<button id="destroy">Destroy</button>
+</body>
+</html>

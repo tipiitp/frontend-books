@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-14-3-4</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="css/uploadify.css" rel="stylesheet" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<script src="js/swfobject.js" type="text/javascript"></script>
+<script src="js/jquery.uploadify.v2.1.4.js" type="text/javascript"></script>
+<style type="text/css">
+#fileQueue {
+  width:400px; height:200px;
+  border:1px solid #E5E5E5;
+  padding:0; margin-bottom:10px;
+  overflow:auto;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+  $("#fileInput").uploadify({
+    "uploader": "scripts/uploadify.swf",
+    "script": "scripts/uploadify.php",
+    "cancelImg": "img/cancel.png",
+    "folder": "uploads",
+    "multi": true,
+    "buttonImg": "img/browse.jpg",
+    "width": 130,
+    "height": 32,
+    "queueID": "fileQueue",
+    "simUploadLimit": 2
+  });
+  $("a").click(function(){
+    $("#fileInput").uploadifyUpload();
+  });
+  $("a:last").click(function(){
+    $("#fileInput").uploadifyClearQueue();
+  });
+});
+</script>
+</head>
+<body>
+<div id="fileQueue"></div>
+<div>
+  <input id="fileInput" name="fileInput" type="file" /><br />
+  <a href="#">Загрузить файл(ы)</a> <a href="#">Очистить очередь</a>
+</div>
+</body>
+</html>

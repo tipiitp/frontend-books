@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-1-5-1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+div { width:50px; height:50px; margin:5px; border:4px outset #00f; float:left; }
+.starthidden { display:none; }
+</style>
+<script type="text/javascript">
+$(function(){
+  alert("Видимых элементов найдено ... " + $(":visible", document.body).length + "\nНевидимых элементов найдено ... " + $(":hidden", document.body).length);
+});
+</script>
+</head>
+<body>
+<div></div>
+<div class="starthidden"></div>
+<div></div>
+<div></div>
+<div style="display:none;"></div>
+<form>
+  <input type="hidden" />
+  <input type="text" />
+  <input type="hidden" />
+</form>
+</body>
+</html>

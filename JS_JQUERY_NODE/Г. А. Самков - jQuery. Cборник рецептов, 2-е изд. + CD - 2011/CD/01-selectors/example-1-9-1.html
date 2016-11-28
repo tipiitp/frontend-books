@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-1-9-1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+button { width:100px; }
+span { color:#00f; font-weight:bold; }
+#inner { color:#f00; }
+table {
+  float:left;
+  margin-left:50px;
+  border:1px solid #ccc;
+}
+td {
+  width:100px;
+  text-align:center;
+  border:1px dotted #ccc;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+  $("button").click(function () {
+    var str = $(this).text();
+    $("tr").css("background-color", "#fff");
+    $("tr" + str).css("background-color", "#f00");
+    $("#inner").text(str);
+  });
+});
+</script>
+</head>
+<body>
+<button>:nth-child(even)</button>
+<button>:nth-child(odd)</button>
+<button>:nth-child(3n)</button>
+<button>:nth-child(2)</button>
+<button>:nth-child(3n+1)</button>
+<button>:nth-child(3n+2)</button>
+<button>:even</button>
+<button>:odd</button>
+<hr />
+<span>tr<span id="inner"></span></span>
+<hr />
+<table>
+  <tr><td>Вадим</td></tr>
+  <tr><td>Владимир</td></tr>
+  <tr><td>Владислав</td></tr>
+  <tr><td>Всеволод</td></tr>
+  <tr><td>Вячеслав</td></tr>
+</table>
+<table>
+  <tr><td>Эдуард</td></tr>
+  <tr><td>Юрий</td></tr>
+  <tr><td>Яков</td></tr>
+</table>
+<table>
+  <tr><td>Георгий</td></tr>
+  <tr><td>Дмитрий</td></tr>
+  <tr><td>Евгений</td></tr>
+  <tr><td>Игорь</td></tr>
+  <tr><td>Константин</td></tr>
+  <tr><td>Леонид</td></tr>
+  <tr><td>Михаил</td></tr>
+  <tr><td>Николай</td></tr>
+  <tr><td>Павел</td></tr>
+  <tr><td>Роман</td></tr>
+</table>
+</body>
+</html>

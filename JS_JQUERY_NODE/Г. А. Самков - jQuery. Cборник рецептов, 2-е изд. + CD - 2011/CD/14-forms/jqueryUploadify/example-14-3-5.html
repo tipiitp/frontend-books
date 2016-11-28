@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-14-3-5</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="css/uploadify.css" rel="stylesheet" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<script src="js/swfobject.js" type="text/javascript"></script>
+<script src="js/jquery.uploadify.v2.1.4.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+  $("#fileInput").uploadify({
+    "uploader": "scripts/uploadify.swf",
+    "script": "scripts/uploadify.php",
+    "cancelImg": "img/cancel.png",
+    "folder": "uploads",
+    "onSelect": function(e,id,obj){
+      $("p").html("Событие: " + e.type +
+            "<br />Идентификатор: " + id +
+            "<br />Имя файла: " + obj.name +
+            "<br />Размер файла: " + obj.size +
+            " байт<br />Дата создания: " + obj.creationDate.date +
+            "/" + obj.creationDate.month +
+            "/" + obj.creationDate.fullYear +
+            "<br />Дата модификации: " + obj.modificationDate.date +
+            "/" + obj.modificationDate.month +
+            "/" + obj.modificationDate.fullYear +
+            "<br />Тип файла: " + obj.type);
+    },
+    "onProgress": function(e,id,obj,data){
+      $("p").html("Событие: " + e.type +
+            "<br />Идентификатор: " + id +
+            "<br />Имя файла: " + obj.name +
+            "<br />Размер файла: " + obj.size +
+            " байт<br />Тип файла: " + obj.type +
+            "<br />Процент загрузки: " + data.percentage +
+            "%<br />Загружено : " + data.bytesLoaded +
+            " байт<br />Текущая скорость загрузки: " + data.speed + " KB/s");
+    },
+    "onComplete": function(e,id,obj,response,data){
+      $("p").html("Событие: " + e.type +
+            "<br />Идентификатор: " + id +
+            "<br />Имя файла: " + obj.name +
+            "<br />Путь к файлу: " + obj.filePath +
+            "<br />Размер файла: " + obj.size +
+            " байт<br />Тип файла: " + obj.type +
+            "<br />Ответ сервера: " + response +
+            "<br />Осталось в очереди: " + data.fileCount +
+            " файлов<br />Средняя скорость загрузки: " + data.speed + " KB/s");
+    }
+  });
+  $("a").click(function(){
+    $("#fileInput").uploadifyUpload();
+  });
+});
+</script>
+</head>
+<body>
+<div>
+  <input id="fileInput" name="fileInput" type="file" />
+  <a href="#">Загрузить файл</a>
+</div>
+<p></p>
+</body>
+</html>

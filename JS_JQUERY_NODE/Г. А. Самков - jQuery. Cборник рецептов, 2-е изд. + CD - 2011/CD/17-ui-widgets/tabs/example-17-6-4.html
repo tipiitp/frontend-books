@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-17-6-4</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="css/le-frog/jquery-ui-1.8.9.custom.css" rel="stylesheet" />
+<script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui-1.8.9.custom.min.js" type="text/javascript"></script>
+<script src="js/jquery.cookie.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+  $("#tabs").tabs({
+  	fx: { opacity: "toggle", duration: "slow" }
+  });
+});
+</script>
+</head>
+<body>
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Nunc tincidunt</a></li>
+    <li><a href="#tabs-2">Proin dolor</a></li>
+    <li><a href="#tabs-3">Aenean lacinia</a></li>
+  </ul>
+  <div id="tabs-1">
+    <p>Tab 1 content</p>
+  </div>
+  <div id="tabs-2">
+    <p>Tab 2 content</p>
+  </div>
+  <div id="tabs-3">
+    <p>Tab 3 content</p>
+  </div>
+</div>
+<!--
+<button id="addTab">add</button>
+<button id="removeTab">remove</button>
+<button id="enableTab">enable</button>
+<button id="disableTab">disable</button>
+<button id="startRotate">Start Rotate</button>
+<button id="stopRotate">Stop Rotate</button>
+<button id="getCookie">Get Cookie</button>
+-->
+</body>
+</html>

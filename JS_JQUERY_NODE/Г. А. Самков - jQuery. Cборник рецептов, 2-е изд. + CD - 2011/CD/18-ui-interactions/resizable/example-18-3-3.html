@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-18-3-3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="css/start/jquery-ui-1.8.9.custom.css" rel="stylesheet" />
+<script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui-1.8.9.custom.min.js" type="text/javascript"></script>
+<style type="text/css">
+  #resizable { width: 200px; height: 200px; padding: 0.5em; }
+  #resizable h3 { text-align: center; margin: 0; }
+  .ui-resizable-helper { border: 1px dotted #999; }
+</style>
+<script type="text/javascript">
+$(function(){
+  $("#resizable").resizable({
+  	animate: true,
+  	ghost: true
+  });
+});
+</script>
+</head>
+<body>
+<div id="resizable" class="ui-widget-content">
+  <h3 class="ui-widget-header">Resizable</h3>
+</div>
+<!--
+<button id="getter">Get Option</button>
+<button id="setter">Set Option</button>
+-->
+</body>
+</html>

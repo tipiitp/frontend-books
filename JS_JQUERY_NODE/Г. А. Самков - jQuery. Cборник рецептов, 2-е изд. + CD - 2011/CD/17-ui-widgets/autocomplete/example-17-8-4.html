@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-17-8-4</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.9.custom.css" rel="stylesheet" />
+<script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui-1.8.9.custom.min.js" type="text/javascript"></script>
+<style type="text/css">
+.ui-autocomplete-loading {  background: #FFF url('css/ui-lightness/images/ui-anim_basic_16x16.gif') right center no-repeat;
+}
+#city { width: 25em; }
+#log { height: 200px; width: 600px; overflow: auto; }
+</style>
+<script type="text/javascript">
+$(function() {
+  $("#city").autocomplete({
+    source: function(request,response) {
+      $.ajax({
+        url: "http://ws.geonames.org/searchJSON",
+        dataType: "jsonp",
+        data: {
+          featureClass: "P",
+          style: "full",
+          maxRows: 12,
+          name_startsWith: request.term
+        },
+        success: function(data) {
+          response($.map(data.geonames, function(item) {
+            return {
+              label: item.name + ", " + item.countryName,
+              value: item.name + " (" + item.countryName + ")" + " [" + item.lat + ", " + item.lng + "]"
+            }
+          }));
+        }
+      });
+    },
+    minLength: 3,
+    select: function(event,ui) {      $("<p/>").text(ui.item ? ui.item.value : "Ничего не выбрано!").prependTo("#log");
+      $("#log").attr("scrollTop", 0);
+    }
+  });
+});
+</script>
+</head>
+<body>
+<div class="ui-widget">
+  <label for="city">Город: </label><input id="city" /><br />
+  <span style="font-size:.8em;">Поддерживается <a href="http://geonames.org">geonames.org</a></span>
+</div>
+<div id="log" class="ui-widget ui-widget-content"></div>
+</body>
+</html>

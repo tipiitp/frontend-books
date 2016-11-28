@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-8-3-3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+input,select { width:120px; margin:1px; }
+span { padding:4px; }
+.focus { color:#f00; }
+.blur { color:#00f; }
+.change { color:#0f0; }
+</style>
+<script type="text/javascript">
+$(function(){
+  $("input").focus(function(){
+    $("<span class='focus'>focus!</span>").insertAfter(this).animate({ opacity:0 },1500);
+  });
+  $("input").blur(function(){
+    $("<span class='blur'>blur!</span>").insertAfter(this).animate({ opacity:0 },1000);
+  });
+  $("select").change(function() {
+    var t = "name=" + $(this).attr('name') + "&value=" + $(this).val();
+    $(this).after("<span class='change'>" + t + "</span>").next("span").animate({ opacity:0 },2500);
+  });
+  $("button").click(function(){
+    $("input:first").focus();
+  });
+  $("input:last").focus();
+});
+</script>
+</head>
+<body>
+<input type="text" name="One" /><br />
+<input type="text" name="Two" /><br />
+<select name="Three">
+  <option value="1">Один</option>
+  <option value="2">Два</option>
+  <option value="3">Три</option>
+  <option value="4">Четыре</option>
+  <option value="5">Пять</option>
+</select><br />
+<button>click()</button>
+</body>
+</html>

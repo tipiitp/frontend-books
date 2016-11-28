@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-14-3-3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="css/uploadify.css" rel="stylesheet" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<script src="js/swfobject.js" type="text/javascript"></script>
+<script src="js/jquery.uploadify.v2.1.4.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+  $("#fileInput").uploadify({
+    "uploader": "scripts/uploadify.swf",
+    "script": "scripts/uploadify.php",
+    "cancelImg": "img/cancel.png",
+    "folder": "uploads",
+    "auto": true,
+    "sizeLimit": 2097152,
+    "fileDesc": "*.gif, *.jpg и *.png",
+    "fileExt": "*.gif;*.jpg;*.png"
+  });
+});
+</script>
+</head>
+<body>
+<div>
+  <input id="fileInput" name="fileInput" type="file" />
+</div>
+</body>
+</html>

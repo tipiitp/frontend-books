@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-12-1-7</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/redmond/jquery-ui-1.8.11.custom.css" />
+<link rel="stylesheet" type="text/css" href="css/ui.jqgrid.css" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<script src="js/i18n/grid.locale-ru.js" type="text/javascript"></script>
+<script src="js/jquery.jqGrid.min.js" type="text/javascript"></script>
+<style type="text/css">
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+  $("#example").jqGrid({
+  	url:"datafromserver2.php",
+    datatype: "json",
+    height: 250,
+    colNames:['Id','Код страны','Код региона','Город','Широта','Долгота'],
+    colModel:[
+      {name:'id', index:'id', width:50, sorttype:"int"},
+      {name:'country_code', index:'country_code', width:75},
+      {name:'region_code', index:'region_code', width:75},
+      {name:'city', index:'city', width:300, align:"right"},
+      {name:'latitude', index:'latitude', width:100, align:"right"},
+      {name:'longitude', index:'longitude', width:100, align:"right"}
+    ],
+    rowNum:100,
+    rowTotal: 10000,
+    rowList:[30,50,100],
+    loadonce:true,
+    rownumbers: true,
+    rownumWidth: 40,
+    pager: "#pager",
+    sortname: "country_code",
+    viewrecords: true,
+    caption: "Поиск в таблице"
+  });
+  $("#example").jqGrid('navGrid','#pager', {edit:false, add:false, del:false, search:false});
+  $("#example").jqGrid('filterToolbar', {searchOnEnter:false});
+});
+</script>
+</head>
+<body>
+<table id="example"></table>
+<div id="pager"></div>
+</body>
+</html>

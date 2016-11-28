@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-7-2-7</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+ul { width: 400px; }
+</style>
+<script type="text/javascript">
+$(function(){
+  $("li").has("ul").css("background-color", "#ff3");
+});
+</script>
+</head>
+<body>
+<ul>
+  <li>Пункт 1</li>
+  <li>Пункт 2
+    <ul>
+      <li>Пункт 2-а</li>
+      <li>Пункт 2-б</li>
+    </ul>
+  </li>
+  <li>Пункт 3</li>
+  <li>Пункт 4</li>
+  <li>Пункт 5
+    <ul>
+      <li>Пункт 5-а</li>
+      <li>Пункт 5-б</li>
+      <li>Пункт 5-в</li>
+    </ul>
+  </li>
+  <li>Пункт 6</li>
+</ul>
+</body>
+</html>

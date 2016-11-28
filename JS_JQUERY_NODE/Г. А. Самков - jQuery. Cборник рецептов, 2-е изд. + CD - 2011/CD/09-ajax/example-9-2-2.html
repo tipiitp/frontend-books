@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>example-9-2-2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<style type="text/css">
+div {
+  width:350px; height:150px;
+  padding:10px; margin:5px;
+  border:3px double #369;
+  overflow:auto;
+}
+#result {
+  padding:10px; margin:5px;
+  border:1px dotted #f00;
+  width:350px; height:50px;
+}
+span { color:#f00; }
+</style>
+<script type="text/javascript">
+$(function () {
+  $.ajaxSetup({
+    url: "testAjaxSetup.php",
+    type: "POST",
+    timeout: 3000,
+    beforeSend: function(){
+      $("div:last").empty();
+      $("#result").text("Загрузка...");
+    },
+    success: function(data){
+      $("div:last").html(data);
+      $("#result").text("Готово!");
+    },
+    error: function(jqXHR, textStatus){
+      $("#result").html("<span>" + textStatus + "</span>");
+    }
+  });
+  $("button:eq(0)").click(function(){
+    $.ajax({ data: "q=1&er=none" });
+  });
+  $("button:eq(1)").click(function(){
+    $.ajax({ data: "q=2&er=none" });
+  });
+  $("button:eq(2)").click(function(){
+    $.ajax({ data: "q=3&er=yes" });
+  });
+});
+</script>
+</head>
+<body>
+<div id="result"></div>
+<div></div>
+<button>Запрос №1</button>
+<button>Запрос №2</button>
+<button>Запрос №3 (с ошибкой)</button>
+</body>
+</html>
